@@ -1,0 +1,159 @@
+[
+    {
+        "incident_id": "INC-EM2ALAPE",
+        "incident_type": "LOCALIZED_ENDPOINT_FAILURE",
+        "severity": "LOW",
+        "status": "OPEN",
+        "detected_at": "2026-04-11T15:54:25.469845Z",
+        "last_seen": "2026-04-11T15:54:25.470888Z",
+        "affected_service": "aiops-laravel",
+        "affected_endpoints": [
+            "\/api\/error"
+        ],
+        "triggering_signals": [
+            {
+                "type": "ERROR_RATE_ANOMALY",
+                "endpoint": "\/api\/error",
+                "baseline": 0.5,
+                "observed": 1,
+                "ratio": 2
+            }
+        ],
+        "baseline_values": {
+            "\/api\/normal": {
+                "request_rate": 0,
+                "latency_p95": 0
+            },
+            "\/api\/error": {
+                "request_rate": 0.09953888888888889,
+                "error_rate": 0.5,
+                "latency_p95": 0.02375
+            },
+            "\/api\/slow": {
+                "request_rate": 0,
+                "latency_p95": 0
+            },
+            "\/api\/db": {
+                "request_rate": 0,
+                "latency_p95": 0.04795454545454545
+            },
+            "\/api\/validate": {
+                "request_rate": 0,
+                "error_rate": 0,
+                "latency_p95": 0
+            }
+        },
+        "observed_values": {
+            "\/api\/normal": {
+                "request_rate": 0,
+                "latency_p95": 0
+            },
+            "\/api\/error": {
+                "request_rate": 0.19907777777777777,
+                "error_rate": 1,
+                "latency_p95": 0.0475
+            },
+            "\/api\/slow": {
+                "request_rate": 0,
+                "latency_p95": 0
+            },
+            "\/api\/db": {
+                "request_rate": 0,
+                "latency_p95": 0.0959090909090909
+            },
+            "\/api\/validate": {
+                "request_rate": 0,
+                "error_rate": 0,
+                "latency_p95": 0
+            }
+        },
+        "summary": "LOCALIZED_ENDPOINT_FAILURE detected on [\/api\/error] with 1 abnormal signal(s). Triggered by: ERROR_RATE_ANOMALY"
+    },
+    {
+        "incident_id": "INC-JGJMZAZC",
+        "incident_type": "ERROR_STORM",
+        "severity": "MEDIUM",
+        "status": "OPEN",
+        "detected_at": "2026-04-11T15:54:50.503550Z",
+        "last_seen": "2026-04-11T15:56:05.652522Z",
+        "affected_service": "aiops-laravel",
+        "affected_endpoints": [
+            "\/api\/error",
+            "\/api\/db"
+        ],
+        "triggering_signals": [
+            {
+                "type": "ERROR_RATE_ANOMALY",
+                "endpoint": "\/api\/error",
+                "baseline": 0.6666666666666666,
+                "observed": 1,
+                "ratio": 1.5
+            },
+            {
+                "type": "ERROR_RATE_ANOMALY",
+                "endpoint": "\/api\/db",
+                "baseline": 1,
+                "observed": 1,
+                "ratio": 1
+            },
+            {
+                "type": "TRAFFIC_ANOMALY",
+                "endpoint": "\/api\/db",
+                "baseline": 0.010173497632228374,
+                "observed": 0.040693990528913496,
+                "ratio": 4
+            }
+        ],
+        "baseline_values": {
+            "\/api\/normal": {
+                "request_rate": 0,
+                "latency_p95": 0
+            },
+            "\/api\/error": {
+                "request_rate": 0.14193300675202228,
+                "error_rate": 0.6666666666666666,
+                "latency_p95": 0.03166666666666667
+            },
+            "\/api\/slow": {
+                "request_rate": 0,
+                "latency_p95": 0
+            },
+            "\/api\/db": {
+                "request_rate": 0.010173497632228374,
+                "error_rate": 1,
+                "latency_p95": 0.06391414141414141
+            },
+            "\/api\/validate": {
+                "request_rate": 0,
+                "error_rate": 0,
+                "latency_p95": 0
+            }
+        },
+        "observed_values": {
+            "\/api\/normal": {
+                "request_rate": 0,
+                "latency_p95": 0
+            },
+            "\/api\/error": {
+                "request_rate": 0.2267212424782891,
+                "error_rate": 1,
+                "latency_p95": 0.0475
+            },
+            "\/api\/slow": {
+                "request_rate": 0,
+                "latency_p95": 0
+            },
+            "\/api\/db": {
+                "request_rate": 0.040693990528913496,
+                "error_rate": 1,
+                "latency_p95": 0.09583333333333333
+            },
+            "\/api\/validate": {
+                "request_rate": 0,
+                "error_rate": 0,
+                "latency_p95": 0
+            }
+        },
+        "summary": "ERROR_STORM detected on [\/api\/error, \/api\/db] with 3 abnormal signal(s). Triggered by: ERROR_RATE_ANOMALY, TRAFFIC_ANOMALY"
+    }
+]

@@ -1,0 +1,6 @@
+{
+  "anomaly_start_iso": "2026-04-11T15:29:52.960535+00:00",
+  "anomaly_end_iso": "2026-04-11T15:31:55.520957+00:00",
+  "anomaly_type": "ERROR_SPIKE",
+  "expected_behavior": "Error rate rises from ~5% baseline to ~40% during anomaly window. http_errors_total{error_category='SYSTEM_ERROR'} rate spikes sharply. Visible in Grafana error rate panel and error category breakdown panel."
+}
