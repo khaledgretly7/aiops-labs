@@ -57,3 +57,42 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+# AIOps Labs 1-4
+
+## Setup
+1. Install: PHP 8.1+, Composer, Docker Desktop, Python 3.8+
+2. `composer install`
+3. Copy `.env.example` to `.env` and set DB credentials
+4. `php artisan migrate`
+5. `docker-compose up -d`
+6. `php artisan serve`
+
+## Run Traffic Generator
+```powershell
+python traffic_generator.py
+```
+
+## Run Detection Engine
+```powershell
+php artisan aiops:detect
+```
+
+## Run ML Analysis
+```powershell
+python ml_anomaly_detection.py
+```
+
+## Run RCA
+```powershell
+python rca_analysis.py
+```
+
+## Deliverables
+- `logs.json` — structured telemetry logs
+- `ground_truth.json` — anomaly window timestamps
+- `anomaly_predictions.csv` — ML model predictions
+- `rca_report.json` — root cause analysis output
+- `engineering_report.pdf` — Labs 1-3 report
+- `lab4_rca_report.pdf` — Lab 4 RCA report
