@@ -1,0 +1,115 @@
+{
+  "incident_id": "RCA-20260411-1529",
+  "generated_at": "2026-04-29T20:16:23.039737",
+  "anomaly_window": {
+    "start": "2026-04-11 15:29:52.960535",
+    "end": "2026-04-11 15:31:55.520957",
+    "type": "ERROR_SPIKE"
+  },
+  "root_cause_endpoint": "api/slow",
+  "primary_signal": "SYSTEM_ERROR",
+  "supporting_evidence": {
+    "error_rate_normal": "28.4%",
+    "error_rate_anomaly": "61.5%",
+    "error_rate_ratio": "2.17x",
+    "latency_normal_ms": 267.0,
+    "latency_anomaly_ms": 652.3,
+    "latency_ratio": "2.44x",
+    "request_rate_normal_rpm": 8.6,
+    "request_rate_anomaly_rpm": 19.2,
+    "endpoint_error_delta": "14.9%",
+    "dominant_error_category": "SYSTEM_ERROR",
+    "error_category_counts": {
+      "SYSTEM_ERROR": 17,
+      "VALIDATION_ERROR": 4,
+      "TIMEOUT_ERROR": 3
+    },
+    "endpoint_attribution": {
+      "api/slow": {
+        "score": 27.62,
+        "error_delta": 14.86,
+        "latency_delta": 876.06,
+        "anomaly_volume": 8,
+        "normal_volume": 53,
+        "anomaly_error_rate": 37.5,
+        "normal_error_rate": 22.64
+      },
+      "api/error": {
+        "score": 8.64,
+        "error_delta": 0.0,
+        "latency_delta": 14.22,
+        "anomaly_volume": 17,
+        "normal_volume": 64,
+        "anomaly_error_rate": 100.0,
+        "normal_error_rate": 100.0
+      },
+      "api/normal": {
+        "score": 4.08,
+        "error_delta": 0.0,
+        "latency_delta": 8.16,
+        "anomaly_volume": 8,
+        "normal_volume": 236,
+        "anomaly_error_rate": 0.0,
+        "normal_error_rate": 0.0
+      },
+      "api/validate": {
+        "score": 3.99,
+        "error_delta": 1.79,
+        "latency_delta": 20.08,
+        "anomaly_volume": 4,
+        "normal_volume": 56,
+        "anomaly_error_rate": 100.0,
+        "normal_error_rate": 98.21
+      },
+      "api/db": {
+        "score": -2.12,
+        "error_delta": -3.33,
+        "latency_delta": 21.34,
+        "anomaly_volume": 2,
+        "normal_volume": 60,
+        "anomaly_error_rate": 0.0,
+        "normal_error_rate": 3.33
+      }
+    }
+  },
+  "confidence_score": 60.0,
+  "incident_timeline": [
+    {
+      "phase": "NORMAL",
+      "time": "2026-04-11 14:39:17",
+      "description": "System operating normally. Avg latency 267ms, error rate 28.4%",
+      "error_rate": 28.36,
+      "avg_latency": 266.96
+    },
+    {
+      "phase": "ANOMALY_START",
+      "time": "2026-04-11 15:29:52",
+      "description": "Error rate begins rising on api/slow. Traffic pattern shifts.",
+      "error_rate": 61.54,
+      "avg_latency": 652.26
+    },
+    {
+      "phase": "PEAK_INCIDENT",
+      "time": "2026-04-11 15:31:00",
+      "description": "Peak error rate 72.7% reached. SYSTEM_ERROR dominating.",
+      "error_rate": 72.73,
+      "avg_latency": 363.86
+    },
+    {
+      "phase": "ANOMALY_END",
+      "time": "2026-04-11 15:31:55",
+      "description": "Injected anomaly window ends. Error rate begins declining.",
+      "error_rate": 61.54,
+      "avg_latency": 652.26
+    },
+    {
+      "phase": "RECOVERY",
+      "time": "2026-04-11 15:33:00",
+      "description": "Error rate drops below 10%. System returns to normal baseline.",
+      "error_rate": 28.36,
+      "avg_latency": 266.96
+    }
+  ],
+  "recommended_action": "Investigate api/slow for elevated SYSTEM_ERROR. Error rate increased 2.2x during anomaly window. Check application logs for root exception, verify downstream dependencies, and review recent deployments (BUILD_VERSION in logs).",
+  "signals_summary": {
+    "latency_anomalous": 
