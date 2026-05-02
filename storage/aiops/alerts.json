@@ -1,0 +1,18 @@
+[
+    {
+        "incident_id": "INC-EM2ALAPE",
+        "incident_type": "LOCALIZED_ENDPOINT_FAILURE",
+        "severity": "LOW",
+        "summary": "LOCALIZED_ENDPOINT_FAILURE detected on [\/api\/error] with 1 abnormal signal(s). Triggered by: ERROR_RATE_ANOMALY",
+        "timestamp": "2026-05-01T12:09:25.418875Z",
+        "channel": "#incidents"
+    },
+    {
+        "incident_id": "INC-JGJMZAZC",
+        "incident_type": "ERROR_STORM",
+        "severity": "MEDIUM",
+        "summary": "ERROR_STORM detected on [\/api\/error, \/api\/db] with 3 abnormal signal(s). Triggered by: ERROR_RATE_ANOMALY, TRAFFIC_ANOMALY",
+        "timestamp": "2026-05-01T12:09:27.462040Z",
+        "channel": "#incidents"
+    }
+]

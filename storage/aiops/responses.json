@@ -1,0 +1,108 @@
+[
+    {
+        "incident_id": "INC-EM2ALAPE",
+        "action_taken": "disable_endpoint",
+        "timestamp": "2026-05-01T12:09:24.362550Z",
+        "duration_ms": 0.01,
+        "result": "SUCCESS",
+        "notes": "Endpoint(s) disabled: \/api\/error",
+        "details": {
+            "action": "SIMULATED_DISABLE",
+            "endpoints": [
+                "\/api\/error"
+            ],
+            "method": "circuit_breaker",
+            "retry_after": 60
+        }
+    },
+    {
+        "incident_id": "INC-EM2ALAPE",
+        "action_taken": "send_alert",
+        "timestamp": "2026-05-01T12:09:25.421810Z",
+        "duration_ms": 2.93,
+        "result": "SUCCESS",
+        "notes": "Alert sent for LOCALIZED_ENDPOINT_FAILURE (severity: LOW)",
+        "details": {
+            "incident_id": "INC-EM2ALAPE",
+            "incident_type": "LOCALIZED_ENDPOINT_FAILURE",
+            "severity": "LOW",
+            "summary": "LOCALIZED_ENDPOINT_FAILURE detected on [\/api\/error] with 1 abnormal signal(s). Triggered by: ERROR_RATE_ANOMALY",
+            "timestamp": "2026-05-01T12:09:25.418875Z",
+            "channel": "#incidents"
+        }
+    },
+    {
+        "incident_id": "INC-EM2ALAPE",
+        "action_taken": "notify_team",
+        "timestamp": "2026-05-01T12:09:26.432265Z",
+        "duration_ms": 0.1,
+        "result": "SUCCESS",
+        "notes": "Team notified via email and Slack (simulated)",
+        "details": {
+            "action": "SIMULATED_NOTIFY",
+            "channels": {
+                "email": "oncall@aiops-lab.com",
+                "slack": "#incidents"
+            },
+            "message": "[AIOPS ALERT] LOCALIZED_ENDPOINT_FAILURE detected. Severity: LOW. ID: INC-EM2ALAPE",
+            "recipients": [
+                "on-call-engineer",
+                "team-lead"
+            ]
+        }
+    },
+    {
+        "incident_id": "INC-JGJMZAZC",
+        "action_taken": "send_alert",
+        "timestamp": "2026-05-01T12:09:27.465213Z",
+        "duration_ms": 3.2,
+        "result": "SUCCESS",
+        "notes": "Alert sent for ERROR_STORM (severity: MEDIUM)",
+        "details": {
+            "incident_id": "INC-JGJMZAZC",
+            "incident_type": "ERROR_STORM",
+            "severity": "MEDIUM",
+            "summary": "ERROR_STORM detected on [\/api\/error, \/api\/db] with 3 abnormal signal(s). Triggered by: ERROR_RATE_ANOMALY, TRAFFIC_ANOMALY",
+            "timestamp": "2026-05-01T12:09:27.462040Z",
+            "channel": "#incidents"
+        }
+    },
+    {
+        "incident_id": "INC-JGJMZAZC",
+        "action_taken": "throttle_traffic",
+        "timestamp": "2026-05-01T12:09:28.477832Z",
+        "duration_ms": 0.03,
+        "result": "SUCCESS",
+        "notes": "Traffic throttled to 50% for: \/api\/error, \/api\/db",
+        "details": {
+            "action": "SIMULATED_THROTTLE",
+            "endpoints": [
+                "\/api\/error",
+                "\/api\/db"
+            ],
+            "throttle_pct": 50,
+            "duration_sec": 300,
+            "rule": "rate_limit=>50%"
+        }
+    },
+    {
+        "incident_id": "INC-JGJMZAZC",
+        "action_taken": "notify_team",
+        "timestamp": "2026-05-01T12:09:29.489799Z",
+        "duration_ms": 0.08,
+        "result": "SUCCESS",
+        "notes": "Team notified via email and Slack (simulated)",
+        "details": {
+            "action": "SIMULATED_NOTIFY",
+            "channels": {
+                "email": "oncall@aiops-lab.com",
+                "slack": "#incidents"
+            },
+            "message": "[AIOPS ALERT] ERROR_STORM detected. Severity: MEDIUM. ID: INC-JGJMZAZC",
+            "recipients": [
+                "on-call-engineer",
+                "team-lead"
+            ]
+        }
+    }
+]
